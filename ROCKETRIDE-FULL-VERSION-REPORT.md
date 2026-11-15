@@ -1,6 +1,6 @@
 # RocketRide — Full Version Development Report
 
-Plain English. Local clone only — **not pushed to GitHub**.
+Plain English. The report itself is on GitHub (branch `docs/rocketride-full-version-report`, commit 993d958); the fork's `develop` is still behind upstream — see "What still needs the user".
 
 ## What is running
 
@@ -215,7 +215,7 @@ failure.
 
 ### Still open (unchanged)
 
-- GitHub fork push still blocked — GitHub App not installed on `rocketride-server`; local clone is at 0c0e269b, clean, ready to push once the user adds the repo to the App.
+- GitHub fork push: write access to the fork WORKS (report pushed to branch `docs/rocketride-full-version-report`, 2026-11-15) — the old "App not installed" blocker was wrong. But the full `develop` fast-forward (230 upstream commits, 2,252 files) is too big for the connector's snapshot push (max 2,000 files / 16 MB, no deletions), so `develop` is still behind. Easiest fix for the user: open the fork on GitHub and click "Sync fork".
 - No public link — localhost-only by design; Cloudflare quick tunnel failed and was stopped per the user's "stop".
 - Engine still dies on VM reboot and sometimes within a minute of a restart; hourly watchdog + re-restart on delivery checks keep it up. No working systemd service (does not survive VM replacement).
 - A real LLM step still needs the user's own provider API key.
